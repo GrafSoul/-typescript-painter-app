@@ -1,2 +1,8 @@
-# -typescript-painter-app
-Sample application using React and Typescript.
+# Painter App (React, Redux  & Typescript)
+
+Sample application using React, Redux and Typescript.    
+Based on the materials of the book [Fullstack React with Typescript]
+
+[fullstack react with typescript]: https://www.newline.co/fullstack-react-with-typescript
+
+© 2022
