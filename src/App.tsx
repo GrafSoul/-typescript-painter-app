@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { beginStroke, endStroke, updateStroke } from "./actions";
 import { RootState } from "./types";
 import { drawStroke, clearCanvas, setCanvasSize } from "./canvasUtils";
-import { currentStrokeSelector } from "./selectors";
+import { ColorPanel } from "./ColorPanel";
 
 const WIDTH = 1024;
 const HEIGHT = 768;
@@ -12,7 +12,7 @@ function App() {
   const dispatch = useDispatch();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const currentStroke = useSelector<RootState, RootState["currentStroke"]>(
-    currentStrokeSelector
+    (state: RootState) => state.currentStroke
   );
   const isDrawing = !!currentStroke.points.length;
   const getCanvasWithContext = (canvas = canvasRef.current) => {
@@ -61,7 +61,7 @@ function App() {
 
     context.lineJoin = "round";
     context.lineCap = "round";
-    context.lineWidth = 5;
+    context.lineWidth = 1;
     context.strokeStyle = "black";
 
     clearCanvas(canvas);
@@ -75,6 +75,7 @@ function App() {
           <button aria-label="Close" />
         </div>
       </div>
+      <ColorPanel />
       <canvas
         onMouseDown={startDrawing}
         onMouseUp={endDrawing}
