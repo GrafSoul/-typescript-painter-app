@@ -1,6 +1,6 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { setStrokeColor } from "./actions";
+import React from "react"
+import { useDispatch } from "react-redux"
+import { setStrokeColor } from "../modules/currentStroke/slice"
 
 const COLORS = [
   "#000000",
@@ -30,18 +30,18 @@ const COLORS = [
   "#8000ff",
   "#ff0080",
   "#804000",
-  "#ff8040",
-];
+  "#ff8040"
+]
 
 export const ColorPanel = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const onColorChange = (color: string) => {
-    dispatch(setStrokeColor(color));
-  };
+    dispatch(setStrokeColor(color))
+  }
 
   return (
-    <div className="window colors-panel">
+    <div className="window control-panel">
       <div className="title-bar">
         <div className="title-bar-text">Colors</div>
       </div>
@@ -50,7 +50,7 @@ export const ColorPanel = () => {
           <div
             key={color}
             onClick={() => {
-              onColorChange(color);
+              onColorChange(color)
             }}
             className="color"
             style={{ backgroundColor: color }}
@@ -58,5 +58,5 @@ export const ColorPanel = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}

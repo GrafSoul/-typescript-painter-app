@@ -4,11 +4,11 @@ import {
   ThunkAction,
   Action
 } from "@reduxjs/toolkit"
-import {currentStroke} from './modules/currentStroke/slice'
-import {modalVisible} from './modules/modals/slice'
-import {projectsList} from './modules/projectsList/slice'
-import historyIndex from './modules/historyIndex/slice'
-import strokes from './modules/strokes/slice'
+import {currentStroke} from './modules/currentStrokeSlice'
+import {modalVisible} from './modules/modalSlice'
+import {projectsList} from './modules/projectsListSlice'
+import historyIndex from './modules/historyIndexSlice'
+import strokes from './modules/strokesSlice'
 import logger from "redux-logger"
 import { RootState } from "./utils/types"
 
